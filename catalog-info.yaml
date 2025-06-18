@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: e15s8utzs-go-gitops
+  description: This is GitOps manifest for e15s8utzs-go   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=e15s8utzs-go
+    backstage.io/kubernetes-id: e15s8utzs-go 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: e15s8utzs-go
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:e15s8utzs-go
